@@ -8,6 +8,7 @@ mkdir -p ./tmp
 
 git clone git@github.com:$github_username/microsites3.git
 git clone git@github.com:$github_username/ish_models.git
+cd /vagrant/microsites3 && gem install bundler && bundle
 
 ## mongo data
 # rm -rf ./tmp/dump

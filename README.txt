@@ -1,5 +1,5 @@
 
  vagrant up
  vagrant ssh
- vagrant reload
+ vagrant reload -or- vagrant provision
 

@@ -2,5 +2,5 @@
 
 set -x
 
-cd microsites3 && bundle && bundle exec rails server --port 3000
+cd /vagrant/microsites3 && bundle && bundle exec rails server --port 3000
 

@@ -2,6 +2,9 @@
 
 locale-gen UTF-8
 
+##
+## node
+##
 cd /opt && \
 wget http://nodejs.org/dist/v0.10.31/node-v0.10.31-linux-x64.tar.gz && \
 tar zxf node-v0.10.31-linux-x64.tar.gz && \
@@ -9,6 +12,9 @@ ln -s /opt/node-v0.10.31-linux-x64/bin/node /usr/local/bin/node && \
 ln -s /opt/node-v0.10.31-linux-x64/bin/node-waf /usr/local/bin/node-waf && \
 ln -s /opt/node-v0.10.31-linux-x64/bin/npm /usr/local/bin/npm
 
+##
+## mongodb
+##
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/mongodb.list && \
 apt-get update && \
@@ -20,4 +26,16 @@ echo "mongodb-org-mongos hold" | dpkg --set-selections && \
 echo "mongodb-org-tools hold" | dpkg --set-selections && \
 sed -i '/bind_ip = 127.0.0.1/,/bind_ip\ =\ 127\.0\.0\.1/s/^/#/' /etc/mongod.conf && \
 service mongod restart
+
+##
+## rbenv, ruby, ruby-build
+##
+git clone https://github.com/rbenv/rbenv.git .rbenv
+cd .rbenv && src/configure && make -C src
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+~/.rbenv/bin/rbenv init
+eval "$(rbenv init -)"
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+rbenv install 2.3.1
 
