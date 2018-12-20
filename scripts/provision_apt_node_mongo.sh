@@ -12,9 +12,10 @@ apt-get install -y git tree vim build-essential \
 ##
 ## user setup
 ##
-# susermod -d /vagrant vagrant
-echo "alias ll='ls -lah '" >> /home/vagrant/.bashrc
-echo "alias be='bundle exec '" >> /home/vagrant/.bashrc
+# echo "alias ll='ls -lah '" >> /home/vagrant/.bashrc
+# echo "alias be='bundle exec '" >> /home/vagrant/.bashrc
+echo "alias ll='ls -lah '" >> /home/vagrant/.bash_profile
+echo "alias be='bundle exec '" >> /home/vagrant/.bash_profile
 
 
 ##
