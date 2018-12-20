@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision :shell, path: "./scripts/provision_apt_node_mongo.sh"
-  # config.vm.provision :shell, path: "./scripts/provision_ruby.sh"
+  config.vm.provision :shell, path: "./scripts/provision_ruby2.sh"
   # config.vm.provision :shell, path: "./scripts/install.sh"
   # config.vm.provision :shell, path: "./scripts/start_microsites3.sh", run: "always", privileged: false
 end

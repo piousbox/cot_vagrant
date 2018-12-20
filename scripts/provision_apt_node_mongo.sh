@@ -6,7 +6,16 @@ locale-gen UTF-8
 ## ubuntu setup
 ##
 apt-get update -y
-apt-get install -y git tree vim build-essential
+apt-get install -y git tree vim build-essential \
+  libssl-dev libreadline-dev zlib1g-dev
+
+##
+## user setup
+##
+# susermod -d /vagrant vagrant
+echo "alias ll='ls -lah '" >> /home/vagrant/.bashrc
+echo "alias be='bundle exec '" >> /home/vagrant/.bashrc
+
 
 ##
 ## node
@@ -17,6 +26,7 @@ tar zxf node-v0.10.31-linux-x64.tar.gz && \
 ln -s /opt/node-v0.10.31-linux-x64/bin/node /usr/local/bin/node && \
 ln -s /opt/node-v0.10.31-linux-x64/bin/node-waf /usr/local/bin/node-waf && \
 ln -s /opt/node-v0.10.31-linux-x64/bin/npm /usr/local/bin/npm
+
 
 ##
 ## mongodb
