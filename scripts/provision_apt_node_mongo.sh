@@ -3,6 +3,12 @@
 locale-gen UTF-8
 
 ##
+## ubuntu setup
+##
+apt-get update -y
+apt-get install -y git tree vim build-essential
+
+##
 ## node
 ##
 cd /opt && \
@@ -27,15 +33,4 @@ echo "mongodb-org-tools hold" | dpkg --set-selections && \
 sed -i '/bind_ip = 127.0.0.1/,/bind_ip\ =\ 127\.0\.0\.1/s/^/#/' /etc/mongod.conf && \
 service mongod restart
 
-##
-## rbenv, ruby, ruby-build
-##
-git clone https://github.com/rbenv/rbenv.git .rbenv
-cd .rbenv && src/configure && make -C src
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-~/.rbenv/bin/rbenv init
-eval "$(rbenv init -)"
-mkdir -p "$(rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
-rbenv install 2.3.1
 
