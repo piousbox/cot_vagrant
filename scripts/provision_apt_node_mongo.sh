@@ -7,7 +7,8 @@ locale-gen UTF-8
 ##
 apt-get update -y
 apt-get install -y git tree vim build-essential \
-  libssl-dev libreadline-dev zlib1g-dev
+  libssl-dev libreadline-dev zlib1g-dev \
+  autogen autoconf libtool
 
 ##
 ## user setup
@@ -16,7 +17,7 @@ apt-get install -y git tree vim build-essential \
 # echo "alias be='bundle exec '" >> /home/vagrant/.bashrc
 echo "alias ll='ls -lah '" >> /home/vagrant/.bash_profile
 echo "alias be='bundle exec '" >> /home/vagrant/.bash_profile
-
+cp scripts/tmpl/_screenrc /home/vagrant/.screenrc
 
 ##
 ## node

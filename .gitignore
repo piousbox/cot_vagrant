@@ -6,3 +6,6 @@
 
 /.rbenv
 /.config/github_username
+/.config/s3.txt
+/ish_manager
+/ishapi

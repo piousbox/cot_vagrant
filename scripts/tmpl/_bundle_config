@@ -1,0 +1,5 @@
+---
+BUNDLE_LOCAL__ISH_MODELS: "/vagrant/ish_models"
+BUNDLE_LOCAL__ISHAPI: "/vagrant/ishapi"
+BUNDLE_LOCAL__ISH_MANAGER: "/vagrant/ish_manager"
+BUNDLE_BUILD__LIBV8: "--with-system-v8"
